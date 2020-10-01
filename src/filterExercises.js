@@ -2,11 +2,13 @@ import { useStudents, useInstructors } from "./data/classroom.js";
 
 let newArray = []
 let fullTimeArray = []
+let studentsByInstructor = []
 
 const students = useStudents();
 const instructors = useInstructors();
+const instructor = 1;
 
-export const getStudentsInCohort = () => {
+export const getStudentsInCohort = (cohort) => {
     return newArray = students.filter(student => student.cohort === 43)
 
 }
@@ -14,6 +16,12 @@ export const getStudentsInCohort = () => {
 export const getFullTimeStudents = () => {
     return fullTimeArray = students.filter(student => student.fullTime === true)
 }
+
+export const getStudentsByInstructorId = () => {
+    return studentsByInstructor = students.filter(student => student.instructorId === 6)
+}
+
+
 // Export a function named getStudentsInCohort
 // It should accept one integer parameter named `cohort`
 // It should return an array of just the students who are in that cohort
