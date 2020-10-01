@@ -5,6 +5,8 @@ let fullTimeArray = []
 let studentsByInstructor = []
 let polyglotArray = []
 let instructorsWithNoStudentsArray = []
+let studentsKnowTheLanguageArray = []
+
 
 const students = useStudents();
 const instructors = useInstructors();
@@ -54,14 +56,20 @@ export const getAvailableInstructors = () => {
         else {
             return true
         }
-    }
+    })
 
-    )
 }
 
-// Export a function called getAvailableInstructors
-// It should not accept any parameters
-// It should return an array of instructors that don't have any students
+export const getStudentsByLanguage = (language) => {
+    return studentsKnowTheLanguageArray = students.filter(student => {
+        const knowsLanguage = student.languages.some(language)
+        if (knowsLanguage) {
+            return true
+        }
+
+
+    })
+}
 
 // Export a function called getStudentsByLanguage
 // It should accept one string parameter named `language`
