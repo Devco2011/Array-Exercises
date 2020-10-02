@@ -12,6 +12,9 @@ export const getStudentById = (id) => {
 
 }
 
+export const getInstructorById = (id) => {
+    return instructors.find((instructor) => instructor.id === id)
+}
 // Export a function called getInstructorById
 // It should accept one integer parameter named `id`
 // It should return the instructor object with the matching ID
@@ -22,6 +25,16 @@ export const getStudentById = (id) => {
 // It should return the student object whose last name matches `lastName`
 // It should NOT be case sensitive
 // Ex: getStudentByName("sMiTh")
+
+export const getStudentByLastName = (lastName) => {
+    return students.find((student) => student.lastName.toLowerCase() === lastName.toLowerCase())
+}
+
+export const getStudentByName = (fullName) => {
+    return students.find((student) => {
+        return `${student.firtName} ${student.lastName}`.toLowerCase() === fullName.toLowerCase();
+    });
+};
 
 // Export a function called getStudentByName
 // It should accept one string parameter named `fullName`
