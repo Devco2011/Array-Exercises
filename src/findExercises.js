@@ -12,13 +12,14 @@ export const getStudentById = (id) => {
 
 }
 
-export const getInstructorById = (id) => {
-    return instructors.find((instructor) => instructor.id === id)
-}
 // Export a function called getInstructorById
 // It should accept one integer parameter named `id`
 // It should return the instructor object with the matching ID
 // Ex: getInstructorById(1)
+
+export const getInstructorById = (id) => {
+    return instructors.find((instructor) => instructor.id === id)
+}
 
 // Export a function called getStudentByLastName
 // It should accept one string parameter named `lastName`
@@ -30,22 +31,29 @@ export const getStudentByLastName = (lastName) => {
     return students.find((student) => student.lastName.toLowerCase() === lastName.toLowerCase())
 }
 
-export const getStudentByName = (fullName) => {
-    return students.find((student) => {
-        return `${student.firtName} ${student.lastName}`.toLowerCase() === fullName.toLowerCase();
-    });
-};
-
 // Export a function called getStudentByName
 // It should accept one string parameter named `fullName`
 // It should return the student object whose first and last name match `fullName`
 // It should NOT be case sensitive
 // Ex: getStudentByName("Summer SMITH")
 
+export const getStudentByName = (fullName) => {
+    return students.find((student) => {
+        return `${student.firstName} ${student.lastName}`.toLowerCase() === fullName.toLowerCase();
+    });
+};
+
 // Export a function called getInstructorOfStudent
 // It should accept one integeter parameter named `studentId`
 // It should return the instructor object of the student whose id matches `studentId`
 // Ex: getInstructorOfStudent(4)      // returns Brenda Long
+
+export const getInstructorOfStudent = (studentId) => {
+    const student = getStudentById(studentId);
+    return getInstructorById(student.instructorId);
+};
+
+
 
 // Export a function called getStudentWithMostLangs
 // It should not accept any parameters
