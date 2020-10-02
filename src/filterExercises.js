@@ -72,9 +72,9 @@ export const getStudentsByLanguage = (language) => {
 /******** Only do this if all other tests are passing ****/
 /******** To test, uncomment the code at the bottom of tests/filter.spec.js  *****/
 
-export const getStudentsByLanguages = (languages) =>
+export const getStudentsByLanguages = (langs) =>
     students.filter((student) => {
-        return languages.every((lang) => student.firstName.languages.includes(lang));
+        return langs.every((language) => student.languages.includes(language));
     });
 
 // Export a function called getStudentsByLanguages
